@@ -16,7 +16,7 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Portofolio Yajis</a>
             
-            <!-- Tombol Tambahan untuk Membuka Menu Profil di Mobile / Semua Layar -->
+            <!-- Tombol Tambahan untuk Membuka Menu Profil di Mobile -->
             <div class="d-flex align-items-center">
                 <button class="btn btn-outline-light btn-sm me-2 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#profilOffcanvas" aria-controls="profilOffcanvas">
                     <i class="bi bi-person-circle"></i> Profil
@@ -49,18 +49,17 @@
         </div>
     </nav>
 
-    <!-- MENU PROFIL (OFFCANVAS: Bisa Dibuka & Ditutup) -->
+    <!-- MENU PROFIL (OFFCANVAS) -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="profilOffcanvas" aria-labelledby="profilOffcanvasLabel">
         <div class="offcanvas-header bg-dark text-white">
             <h5 class="offcanvas-title fw-bold" id="profilOffcanvasLabel">
                 <i class="bi bi-person-badge me-2"></i>Tentang Yajis
             </h5>
-            <!-- Tombol Tutup (X) -->
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body text-center">
-            <!-- Foto Profil -->
-            <img src="assets/poto.jpeg" class="rounded-circle img-thumbnail mb-3 shadow-sm" alt="Foto Profil Yajis" style="width: 120px; height: 120px; object-fit: cover;">
+            <!-- Foto Profil (Sesuaikan nama file foldermu, cth: img/foto-profil.jpg) -->
+            <img src="assets/poto.jpeg" class="rounded-circle img-thumbnail mb-3 shadow-sm" alt="Foto Profil Yajis" style="width: 130px; height: 130px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/150'">
             
             <h4 class="fw-bold mb-1">Yajis</h4>
             <p class="text-primary fw-semibold mb-3">Full-Stack Web Developer</p>
@@ -87,7 +86,6 @@
             </div>
 
             <div class="mt-4">
-                <!-- Tombol Tutup Alternatif di Bagian Bawah -->
                 <button type="button" class="btn btn-dark w-100" data-bs-dismiss="offcanvas">Tutup Profil</button>
             </div>
         </div>
@@ -159,6 +157,14 @@
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="card shadow-sm p-4">
                         <h2 class="text-center mb-4 fw-bold">Hubungi Saya</h2>
+                        
+                        <!-- Pesan Sukses / Validasi Berhasil (Hidden secara default) -->
+                        <div id="successAlert" class="alert alert-success alert-dismissible fade d-none" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i><strong>Terima kasih!</strong> Pesan Anda berhasil dikirim. Yajis akan segera menghubungi Anda.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <!-- Form Kontak dengan validasi Bootstrap -->
                         <form class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama Lengkap</label>
@@ -194,17 +200,30 @@
     <!-- Bootstrap 5 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script Validasi Form -->
+    <!-- Script Validasi Form & Pesan Sukses -->
     <script>
         (() => {
             'use strict'
             const forms = document.querySelectorAll('.needs-validation')
+            const successAlert = document.getElementById('successAlert')
+
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
+                    // Cek apakah form belum valid
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+                        successAlert.classList.add('d-none') // Sembunyikan pesan sukses jika ada yang kosong
+                    } else {
+                        // Jika form valid dan berhasil diisi
+                        event.preventDefault() // Mencegah reload halaman default (opsional, untuk simulasi)
+                        successAlert.classList.remove('d-none') // Tampilkan kotak pesan sukses
+                        successAlert.classList.add('show')
+                        
+                        form.reset() // Mengosongkan kembali form
+                        form.classList.remove('was-validated') // Mereset status validasi merah/hijau
                     }
+
                     form.classList.add('was-validated')
                 }, false)
             })
