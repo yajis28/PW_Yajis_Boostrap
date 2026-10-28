@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi - Yajis</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <!-- BAGIAN 1: NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Portofolio Yajis</a>
+            
+            <!-- Tombol Tambahan untuk Membuka Menu Profil di Mobile / Semua Layar -->
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-light btn-sm me-2 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#profilOffcanvas" aria-controls="profilOffcanvas">
+                    <i class="bi bi-person-circle"></i> Profil
+                </button>
+                <!-- Navbar Burger (Mobile Toggle) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyek">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                    <!-- Tombol Menu Profil di Navbar Desktop -->
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#profilOffcanvas" aria-controls="profilOffcanvas">
+                            <i class="bi bi-person-circle"></i> Buka Profil
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENU PROFIL (OFFCANVAS: Bisa Dibuka & Ditutup) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="profilOffcanvas" aria-labelledby="profilOffcanvasLabel">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title fw-bold" id="profilOffcanvasLabel">
+                <i class="bi bi-person-badge me-2"></i>Tentang Yajis
+            </h5>
+            <!-- Tombol Tutup (X) -->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body text-center">
+            <!-- Foto Profil -->
+            <img src="assets/poto.jpeg" class="rounded-circle img-thumbnail mb-3 shadow-sm" alt="Foto Profil Yajis" style="width: 120px; height: 120px; object-fit: cover;">
+            
+            <h4 class="fw-bold mb-1">Yajis</h4>
+            <p class="text-primary fw-semibold mb-3">Full-Stack Web Developer</p>
+            
+            <hr>
+            
+            <div class="text-start px-2">
+                <h6 class="fw-bold text-dark">Bio Singkat:</h6>
+                <p class="text-muted small">
+                    Halo! Saya Yajis, seorang pengembang web yang antusias dalam membangun antarmuka pengguna yang bersih, responsif, dan interaktif menggunakan teknologi modern seperti Bootstrap dan JavaScript.
+                </p>
+
+                <h6 class="fw-bold text-dark mt-3">Keahlian Utama:</h6>
+                <div class="mb-3">
+                    <span class="badge bg-secondary mb-1">HTML5 & CSS3</span>
+                    <span class="badge bg-secondary mb-1">Bootstrap 5</span>
+                    <span class="badge bg-secondary mb-1">JavaScript (ES6)</span>
+                    <span class="badge bg-secondary mb-1">UI/UX Design</span>
+                </div>
+
+                <h6 class="fw-bold text-dark">Kontak Langsung:</h6>
+                <p class="text-muted small mb-1"><i class="bi bi-envelope me-2"></i>yajis@email.com</p>
+                <p class="text-muted small"><i class="bi bi-geo-alt me-2"></i>Jakarta, Indonesia</p>
+            </div>
+
+            <div class="mt-4">
+                <!-- Tombol Tutup Alternatif di Bagian Bawah -->
+                <button type="button" class="btn btn-dark w-100" data-bs-dismiss="offcanvas">Tutup Profil</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BAGIAN 1: HERO SECTION -->
+    <section id="hero" class="bg-primary text-white text-center py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold mb-3">Halo, Saya Yajis</h1>
+            <p class="lead mb-4">Web Developer & UI/UX Designer yang berfokus pada pembuatan aplikasi web responsif dan modern.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#proyek" class="btn btn-light btn-lg text-primary fw-semibold">Lihat Proyek</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- BAGIAN 2: GRID KARTU PROYEK -->
+        <section id="proyek" class="mb-5">
+            <h2 class="text-center mb-4 fw-bold">Proyek Saya</h2>
+            <div class="row g-4">
+                <!-- Kartu Proyek 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/beban.png" class="card-img-top" alt="Proyek 1">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Aplikasi E-Commerce</h5>
+                            <p class="card-text text-muted">Platform toko online responsif dengan integrasi payment gateway dan keranjang belanja.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-outline-primary w-100">Detail Proyek</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu Proyek 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/nilai.png" class="card-img-top" alt="Proyek 2">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Sistem Manajemen Tugas</h5>
+                            <p class="card-text text-muted">Aplikasi web produktivitas untuk mengelola tugas harian dan proyek tim secara visual.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-outline-primary w-100">Detail Proyek</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu Proyek 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/pembayaran.png" class="card-img-top" alt="Proyek 3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Website Landing Page</h5>
+                            <p class="card-text text-muted">Landing page modern dan cepat untuk mempromosikan produk SaaS terbaru.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-outline-primary w-100">Detail Proyek</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 3: FORM KONTAK VALID -->
+        <section id="kontak" class="mb-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card shadow-sm p-4">
+                        <h2 class="text-center mb-4 fw-bold">Hubungi Saya</h2>
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" placeholder="Masukkan nama Anda" required>
+                                <div class="invalid-feedback">Nama lengkap wajib diisi!</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="nama@example.com" required>
+                                <div class="invalid-feedback">Harap masukkan alamat email yang valid!</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pesan" class="form-label">Pesan</label>
+                                <textarea class="form-control" id="pesan" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                                <div class="invalid-feedback">Pesan tidak boleh kosong!</div>
+                            </div>
+
+                            <button class="btn btn-primary w-100" type="submit">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Portofolio Yajis. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Validasi Form -->
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>
